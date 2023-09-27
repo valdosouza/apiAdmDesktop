@@ -21,6 +21,9 @@ routes.use("/itensifc", itensIfc);
 const cliente = require("../routes/cliente.routes");
 routes.use("/cliente", cliente);
 
+const cliInterface = require("../routes/cli_interface.routes");
+routes.use("/cliinterface", cliInterface);
+
 const projeto = require("../routes/projeto.routes");
 routes.use("/projeto", projeto);
 

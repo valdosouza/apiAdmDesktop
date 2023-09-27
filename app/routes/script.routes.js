@@ -10,21 +10,21 @@ const protectedRouter = withJWTAuthMiddleware(router, process.env.SECRET);
  * @swagger
  * components:
  *   schemas:
- *     Script:
+ *     script:
  *       type: object
  *       required:
- *         - SCP_CODPRJ
- *         - SCP_CODCLI
- *         - SCP_COMANDO
- *         - SCP_DATATIME
+ *         - scp_codprj
+ *         - scp_codcli
+ *         - scp_comando
+ *         - scp_datatime
  *       properties:
- *         SCP_CODPRJ:
+ *         scp_codprj:
  *           type: integer
- *         SCP_CODCLI:
+ *         scp_codcli:
  *           type: integer
- *         SCP_COMANDO:
+ *         scp_comando:
  *           type: string
- *         SCP_DATATIME:
+ *         scp_datatime:
  *           type: string
  *  
  */
@@ -91,13 +91,13 @@ router.put("/:id", script.update);
 
 /**
 * @swagger
-* /script/getlist/{SCP_CODCLI}:
+* /script/getlist/{scp_codcli}:
 *   get:
 *     summary: Returns the list of all the Scripts
 *     tags: [Script]
 *     parameters:
 *       - in: path
-*         name: SCP_CODCLI
+*         name: scp_codcli
 *     responses:
 *       200:
 *         description: The  List of Scripts
@@ -109,7 +109,7 @@ router.put("/:id", script.update);
 *                 allOf:
 *                   - $ref: '#/components/schemas/Script'
 */
-router.get("/getlist/:SCP_CODCLI", script.getList);
+router.get("/getlist/:scp_codcli", script.getList);
 
 
 module.exports = router;  

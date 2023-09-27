@@ -19,7 +19,7 @@ class InterfaceEndPoint {
   }
 
   static getList(req, res) {    
-    console.log(req.params);
+    
     InterfaceController.getList(req.params.cif_codcli, req.params.cif_codprj)
       .then(data => {
         res.send(data);
@@ -28,8 +28,9 @@ class InterfaceEndPoint {
 
   static delete(req, res) {
 
-    InterfaceController.delete(req.body).then(data => {
-      res.send(data);
+    InterfaceController.delete(req.params.ifc_codigo)
+    .then(() => {
+      res.status(200).end();
     })
   }
 }

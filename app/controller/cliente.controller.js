@@ -1,6 +1,7 @@
 const Base = require('./base.controller.js');
 const db = require("../model/index.js");
 const Tb = db.cliente;
+const TbCliInterface = db.cliInterface;
 
 class ClienteController extends Base {
 
@@ -31,6 +32,42 @@ class ClienteController extends Base {
         
       } catch (error) {
         reject("ClienteController.update:" + err);
+      }
+    });
+    return promise;
+  }
+
+  static async avisar(cli_codetd) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        Tb.update({cli_atualizar:'S'}, {
+          where: { cli_codetd: cli_codetd },
+        })
+        .then((data)=>{
+          resolve(data);
+        })
+        
+      } catch (error) {
+        reject("ClienteController.avisar:" + err);
+      }
+    });
+    return promise;
+  }
+  
+  static async desabilitarMenus(cli_codetd) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        TbCliInterface.update({cif_ativo :'N'}, {
+          where: { cif_codcli : cli_codetd,
+                   cif_ativo : 'S',
+                 },
+        })
+        .then((data)=>{
+          resolve(data);
+        })
+        
+      } catch (error) {
+        reject("ClienteController.desabilitamenus:" + err);
       }
     });
     return promise;

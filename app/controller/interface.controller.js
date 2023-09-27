@@ -31,22 +31,43 @@ class InterfaceController extends Base {
   static async update(body) {
     const promise = new Promise(async (resolve, reject) => {
       try {
-        Tb.update(data, {
-          where: { ifc_codigo: data.ifc_codigo },
+        Tb.update(body, {
+          where: { ifc_codigo: body.ifc_codigo },
         })
+        .then((data) => {
+          resolve(data);
+         });
+           
       } catch (error) {
-        reject("InterfaceController.update:" + err);
+        reject("InterfaceController.update:" + error);
       }
     });
     return promise;
   }
 
+  static async delete(ifc_codigo) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        Tb.destroy({
+          where: { ifc_codigo: ifc_codigo },
+        })
+        .then((data) => {
+          resolve(data);
+         });
+      } catch (error) {
+        reject("InterfaceController.delete:" + error);
+      }
+    });
+    return promise;
+  }
   static async getList(cif_codcli, cif_codprj) {
     const promise = new Promise(async (resolve, reject) => {
       try {
         var sqltxt =
         'SELECT '+
         ' IFC_CODIGO, '+
+        ' IFC_CODPRJ,'+
+        ' IFC_SISTEMA,'+
         ' IFC_DESCRICAO, '+
         ' IFC_FR_NAME, '+
         ' IFC_CODMNU, '+

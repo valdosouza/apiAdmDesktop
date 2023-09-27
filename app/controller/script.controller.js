@@ -39,7 +39,7 @@ class ScriptController extends Base {
     return promise;
   }
 
-  static async getList(SCP_CODCLI) {
+  static async getList(scp_codcli) {
     const promise = new Promise(async (resolve, reject) => {
       try {
         var sqltxt =
@@ -54,7 +54,7 @@ class ScriptController extends Base {
           .query(
             sqltxt,
             {
-              replacements: [SCP_CODCLI],
+              replacements: [scp_codcli],
               type: Tb.sequelize.QueryTypes.SELECT,
             }
           )

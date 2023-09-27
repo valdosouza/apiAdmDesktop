@@ -19,7 +19,7 @@ class ScriptEndPoint {
   }
 
   static getList(req, res) {    
-    ScriptController.getList(req.params.SCP_CODCLI)
+    ScriptController.getList(req.params.scp_codcli)
       .then(data => {
         res.send(data);
       })

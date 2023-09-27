@@ -26,7 +26,7 @@ class ProjetoEndPoint {
   }
 
   static get(req, res) {    
-    ProjetoController.get(req.params.PRJ_CODIGO)
+    ProjetoController.get(req.params.prj_codigo)
       .then(data => {
         res.send(data);
       })

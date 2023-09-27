@@ -13,52 +13,52 @@ const protectedRouter = withJWTAuthMiddleware(router, process.env.SECRET);
  *     Projeto:
  *       type: object
  *       required:
- *         - PRJ_CODIGO
- *         - PRJ_CODETB
- *         - PRJ_NUMERO
- *         - PRJ_DATA
- *         - PRJ_CODETD
- *         - PRJ_CODSIT
- *         - PRJ_DESCRICAO
- *         - PRJ_DETALHE
- *         - PRJ_DT_INICIAL
- *         - PRJ_DT_FINAL
- *         - PRJ_HR_INICIAL
- *         - PRJ_HR_FINAL 
- *         - PRJ_ATUALIZACAO
+ *         - prj_codigo
+ *         - prj_codetb
+ *         - prj_numero
+ *         - prj_data
+ *         - prj_codetd
+ *         - prj_codsit
+ *         - prj_descricao
+ *         - prj_detalhe
+ *         - prj_dt_inicial
+ *         - prj_dt_final
+ *         - prj_hr_inicial
+ *         - prj_hr_final 
+ *         - prj_atualizacao
  * 
  *       properties:
- *         SCP_CODPRJ:
+ *         scp_codprj:
  *           type: integer
- *         PRJ_CODIGO:
+ *         prj_codigo:
  *           type: integer
- *         PRJ_CODETB:
+ *         prj_codetb:
  *           type: integer
- *         PRJ_NUMERO:
+ *         prj_numero:
  *           type: string
- *         PRJ_DATA:
+ *         prj_data:
  *           type: string
- *         PRJ_CODETD:
+ *         prj_codetd:
  *           type: integer
- *         PRJ_CODSIT:
+ *         prj_codsit:
  *           type: integer
- *         PRJ_DESCRICAO:
+ *         prj_descricao:
  *           type: string
- *         PRJ_DETALHE:
+ *         prj_detalhe:
  *           type: string
- *         PRJ_DT_INICIAL:
+ *         prj_dt_inicial:
  *           type: string
- *         PRJ_DT_FINAL:
+ *         prj_dt_final:
  *           type: string
- *         PRJ_HR_INICIAL:
+ *         prj_hr_inicial:
  *           type: string
- *         PRJ_HR_FINAL:
+ *         prj_hr_final:
  *           type: string
- *         PRJ_PATH_LOCAL:
+ *         prj_path_local:
  *           type: string
- *         PRJ_PATH_FTP:
+ *         prj_path_ftp:
  *           type: string
- *         PRJ_ATUALIZACAO:
+ *         prj_atualizacao:
  *           type: string
  * 
  *  
@@ -145,13 +145,13 @@ router.get("/getlist", projeto.getList);
 
 /**
 * @swagger
-* /projeto/get/{PRJ_CODIGO}:
+* /projeto/get/{prj_codigo}:
 *   get:
 *     summary: Returns the list of all the Scripts
 *     tags: [Projeto]
 *     parameters:
 *       - in: path
-*         name: PRJ_CODIGO
+*         name: prj_codigo
 *     responses:
 *       200:
 *         description: The  Project returns
@@ -161,6 +161,6 @@ router.get("/getlist", projeto.getList);
 *               allOf:
 *                 - $ref: '#/components/schemas/Projeto'
 */
-router.get("/get/:PRJ_CODIGO", projeto.get);
+router.get("/get/:prj_codigo", projeto.get);
 
 module.exports = router;  

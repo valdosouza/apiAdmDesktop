@@ -83,7 +83,30 @@ router.post("/", operInterface.create);
 *        description: Some server error
 * 
 */
-router.put("/:id", operInterface.update);
+router.put("/", operInterface.update);
+
+/**
+* @swagger
+* /operinterface/{opf_codigo}:
+*  delete:
+*    summary: Delete the OperInterface by Interface Id
+*    tags: [OperInterface]
+*    parameters:
+*      - in: path
+*        name: opf_codigo
+*    responses:
+*      200:
+*        description: The OperInterface was successfully created
+*        content:
+*          application/json:
+*            schema:
+*              allOf:
+*                - $ref: '#/components/schemas/OperInterface'
+*      500:
+*        description: Some server error
+* 
+*/
+router.delete("/:opf_codigo", operInterface.delete);
 
 /**
 * @swagger
@@ -91,7 +114,6 @@ router.put("/:id", operInterface.update);
 *  get:
 *    summary: Returns the list of all the OperInterface
 *    tags: [OperInterface]
-*    parameters:
 *    responses:
 *      200:
 *        description: The  List of OperInterface

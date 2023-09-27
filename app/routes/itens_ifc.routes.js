@@ -13,15 +13,15 @@ const protectedRouter = withJWTAuthMiddleware(router, process.env.SECRET);
  *     ItensIfc:
  *       type: object
  *       required:
- *         - IIF_CODIGO
- *         - IIF_CODIFC
- *         - IIF_CODOPF
+ *         - iif_codigo
+ *         - iif_codifc
+ *         - iif_codopf
  *       properties:
- *         IIF_CODIGO:
+ *         iif_codigo:
  *           type: integer
- *         IIF_CODIFC:
+ *         iif_codifc:
  *           type: integer
- *         IIF_CODOPF:
+ *         iif_codopf:
  *           type: integer
  */
 
@@ -60,30 +60,26 @@ router.post("/", itensIFC.create);
 
 /**
 * @swagger
-* /itensifc:
-*  put:
-*    summary: Update the ItensIfc by the id
+* /itensifc/{ifc_codigo}:
+*  delete:
+*    summary: Delete All by Interface Id
 *    tags: [ItensIfc]
-*    requestBody:
-*      required: true
-*      content:
-*        application/json:
-*          schema:
-*            allOf:
-*              - $ref: '#/components/schemas/ItensIfc'
+*    parameters:
+*      - in: path
+*        name: ifc_codigo
 *    responses:
 *      200:
-*        description: The ItensIfc was successfully created
+*        description: The Items Interface was successfully deleted
 *        content:
 *          application/json:
 *            schema:
 *              allOf:
-*                - $ref: '#/components/schemas/ItensIfc'
+*                - $ref: '#/components/schemas/OperInterface'
 *      500:
 *        description: Some server error
 * 
 */
-router.put("/:id", itensIFC.update);
+router.delete("/:ifc_codigo", itensIFC.delete);
 
 /**
 * @swagger

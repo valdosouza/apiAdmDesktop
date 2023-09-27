@@ -56,7 +56,7 @@ class ProjetoController extends Base {
     return promise;
   }
 
-  static async get(PRJ_CODIGO) {
+  static async get(prj_codigo) {
     const promise = new Promise(async (resolve, reject) => {
       try {
         var sqltxt =
@@ -67,7 +67,7 @@ class ProjetoController extends Base {
           .query(
             sqltxt,
             {
-              replacements: [PRJ_CODIGO],
+              replacements: [prj_codigo],
               type: Tb.sequelize.QueryTypes.SELECT,
             }
           )

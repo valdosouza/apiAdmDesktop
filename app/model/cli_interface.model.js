@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('tb_cli_interface', {
-    CIF_CODPRJ: {
+    cif_codprj: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
         key: 'PRJ_CODIGO'
       }
     },
-    CIF_CODCLI: {
+    cif_codcli: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -19,16 +19,16 @@ module.exports = function(sequelize, DataTypes) {
         key: 'CLI_CODETD'
       }
     },
-    CIF_CODIFC: {
+    cif_codifc: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    CIF_ATIVO: {
+    cif_ativo: {
       type: DataTypes.CHAR(1),
       allowNull: false
     },
-    CIF_ATUALIZAR: {
+    cif_atualizar: {
       type: DataTypes.CHAR(1),
       allowNull: false
     }

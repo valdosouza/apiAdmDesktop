@@ -1,18 +1,21 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('tb_itens_ifc', {
-    IIF_CODIGO: {
+    iif_codigo: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      field : 'IIF_CODIGO'
     },
-    IIF_CODIFC: {
+    iif_codifc: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      field : 'IIF_CODIFC'
     },
-    IIF_CODOPF: {
+    iif_codopf: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      field : 'IIF_CODOPF'
     }
   }, {
     sequelize,

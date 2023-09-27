@@ -18,6 +18,21 @@ class ClienteEndPoint {
       })
   }
 
+  static avisar = (req, res) => {
+
+    ClienteController.avisar(req.params.cli_codetd)
+      .then(data => {
+        res.send(data);
+      })
+  }
+  
+  static desabilitarMenus = (req, res) => {
+
+    ClienteController.desabilitarMenus(req.params.cli_codetd)
+      .then(data => {
+        res.send(data);
+      })
+  }  
   static getList(req, res) {    
     ClienteController.getList()
       .then(data => {

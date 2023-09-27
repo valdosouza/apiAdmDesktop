@@ -7,7 +7,8 @@ class OperInterfaceController extends Base {
   static async create(body) {
     const promise = new Promise(async (resolve, reject) => {
       try {       
-        Tb.create(data)
+
+        Tb.create(body)
           .then((data) => {
             resolve(data);
           })
@@ -22,11 +23,30 @@ class OperInterfaceController extends Base {
   static async update(body) {
     const promise = new Promise(async (resolve, reject) => {
       try {
-        Tb.update(data, {
-          where: { ifc_codigo: data.ifc_codigo },
+        Tb.update(body, {
+          where: { opf_codigo: body.opf_codigo },
         })
+        .then((data) => {
+          resolve(data);
+        })        
       } catch (error) {
-        reject("OperInterfaceController.update:" + err);
+        reject("OperInterfaceController.update:" + error);
+      }
+    });
+    return promise;
+  }
+
+  static async delete(opf_codigo) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        Tb.destroy({
+          where: { opf_codigo: opf_codigo },
+        })
+        .then((data) => {
+          resolve(data);
+         });
+      } catch (error) {
+        reject("OperInterfaceController.update:" + error);
       }
     });
     return promise;

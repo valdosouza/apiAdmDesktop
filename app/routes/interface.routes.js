@@ -96,7 +96,30 @@ router.post("/", interface.create);
 *        description: Some server error
 * 
 */
-router.put("/:id", interface.update);
+router.put("/", interface.update);
+
+/**
+* @swagger
+* /interface/{ifc_codigo}:
+*  delete:
+*    summary: Delete the Interface by Id
+*    tags: [Interface]
+*    parameters:
+*      - in: path
+*        name: ifc_codigo
+*    responses:
+*      200:
+*        description: The Interface was successfully deleted
+*        content:
+*          application/json:
+*            schema:
+*              allOf:
+*                - $ref: '#/components/schemas/OperInterface'
+*      500:
+*        description: Some server error
+* 
+*/
+router.delete("/:ifc_codigo", interface.delete);
 
 /**
 * @swagger

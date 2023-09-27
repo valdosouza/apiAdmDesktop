@@ -27,8 +27,9 @@ class OperInterfaceEndPoint {
 
   static delete(req, res) {
 
-    OperInterfaceController.delete(req.body).then(data => {
-      res.send(data);
+    OperInterfaceController.delete(req.params.opf_codigo)
+    .then(() => {      
+      res.status(200).end();
     })
   }
 }

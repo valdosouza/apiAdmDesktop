@@ -114,6 +114,42 @@ router.put("/", cliente.update);
 
 /**
 * @swagger
+* /cliente/avisar/{cli_codetd}:
+*  put:
+*    summary: Update the Cliente by the id
+*    tags: [Cliente]
+*    parameters:
+*      - in: path
+*        name: cli_codetd
+*    responses:
+*      200:
+*        description: The Cliente was successfully awareness
+*      500:
+*        description: Some server error
+* 
+*/
+router.put("/avisar/:cli_codetd", cliente.avisar);
+
+/**
+* @swagger
+* /cliente/desabilitarmenus/{cli_codetd}:
+*  put:
+*    summary: Desabilita os menus do cliente
+*    tags: [Cliente]
+*    parameters:
+*      - in: path
+*        name: cli_codetd
+*    responses:
+*      200:
+*        description: The Menus of customer was disabled
+*      500:
+*        description: Some server error
+* 
+*/
+router.put("/desabilitarmenus/:cli_codetd", cliente.desabilitarMenus);
+
+/**
+* @swagger
 * /cliente/getlist:
 *   get:
 *     summary: Returns the list of all the Scripts

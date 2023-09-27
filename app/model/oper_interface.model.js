@@ -1,18 +1,21 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('tb_oper_interface', {
-    OPF_CODIGO: {
+    opf_codigo: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      field : 'OPF_CODIGO'
     },
-    OPF_DESCRICAO: {
+    opf_descricao: {
       type: DataTypes.STRING(30),
-      allowNull: false
+      allowNull: false,
+      field : 'OPF_DESCRICAO'
     },
-    OPF_IMAGEM: {
+    opf_imagem: {
       type: DataTypes.BLOB,
-      allowNull: true
+      allowNull: true,
+      field: 'OPF_IMAGEM'
     }
   }, {
     sequelize,

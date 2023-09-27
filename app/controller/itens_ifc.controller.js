@@ -7,7 +7,7 @@ class ItensIfcController extends Base {
   static async create(body) {
     const promise = new Promise(async (resolve, reject) => {
       try {       
-        Tb.create(data)
+        Tb.create(body)
           .then((data) => {
             resolve(data);
           })
@@ -19,14 +19,17 @@ class ItensIfcController extends Base {
     return promise;
   }
 
-  static async update(body) {
+  static async delete(ifc_codigo) {
     const promise = new Promise(async (resolve, reject) => {
       try {
-        Tb.update(data, {
-          where: { ifc_codigo: data.ifc_codigo },
+        Tb.destroy({
+          where: { iif_codifc: ifc_codigo },
         })
+        .then((data) => {
+          resolve(data);
+         });
       } catch (error) {
-        reject("ItensIfcController.update:" + err);
+        reject("ItensIfcController.delete:" + error);
       }
     });
     return promise;

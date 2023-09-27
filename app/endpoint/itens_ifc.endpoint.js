@@ -27,10 +27,10 @@ class ItensIfcEndPoint {
 
   static delete(req, res) {
 
-    ItensIfcController.delete(req.body).then(data => {
-      res.send(data);
+    ItensIfcController.delete(req.params.ifc_codigo)
+    .then(() => {
+      res.status(200).end();
     })
   }
 }
-
 module.exports = ItensIfcEndPoint;
