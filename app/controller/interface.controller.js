@@ -41,7 +41,7 @@ class InterfaceController extends Base {
     return promise;
   }
 
-  static async getList(CIF_CODCLI, CIF_CODPRJ) {
+  static async getList(cif_codcli, cif_codprj) {
     const promise = new Promise(async (resolve, reject) => {
       try {
         var sqltxt =
@@ -62,7 +62,7 @@ class InterfaceController extends Base {
           .query(
             sqltxt,
             {
-              replacements: [CIF_CODCLI, CIF_CODPRJ],
+              replacements: [cif_codcli, cif_codprj],
               type: Tb.sequelize.QueryTypes.SELECT,
             }
           )
@@ -70,7 +70,7 @@ class InterfaceController extends Base {
             resolve(data);
           })
       } catch (error) {
-        resolve(error);
+        reject(error);
       }
     });
     return promise;

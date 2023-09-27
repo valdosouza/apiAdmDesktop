@@ -13,27 +13,27 @@ const protectedRouter = withJWTAuthMiddleware(router, process.env.SECRET);
  *     Interface:
  *       type: object
  *       required:
- *         - IFC_CODIGO
- *         - IFC_CODPRJ
- *         - IFC_DESCRICAO
- *         - IFC_FR_NAME
- *         - IFC_CODMNU
- *         - IFC_SISTEMA
- *         - IFC_MENU 
+ *         - ifc_codigo
+ *         - ifc_codprj
+ *         - ifc_descricao
+ *         - ifc_fr_name
+ *         - ifc_codmnu
+ *         - ifc_sistema
+ *         - ifc_menu 
  *       properties:
- *         IFC_CODIGO:
+ *         ifc_codigo:
  *           type: integer
- *         IFC_CODPRJ:
+ *         ifc_codprj:
  *           type: integer 
- *         IFC_DESCRICAO:
+ *         ifc_descricao:
  *           type: string
- *         IFC_FR_NAME:
+ *         ifc_fr_name:
  *           type: string
- *         IFC_CODMNU:
+ *         ifc_codmnu:
  *           type: integer  
- *         IFC_SISTEMA:
+ *         ifc_sistema:
  *           type: string
- *         IFC_MENU:
+ *         ifc_menu:
  *           type: string
  *  
  */
@@ -100,15 +100,15 @@ router.put("/:id", interface.update);
 
 /**
 * @swagger
-* /interface/getlist/{CIF_CODCLI}/{CIF_CODPRJ}:
+* /interface/getlist/{cif_codcli}/{cif_codprj}:
 *   get:
 *     summary: Returns the list of all the Interface
 *     tags: [Interface]
 *     parameters:
 *       - in: path
-*         name: SCP_CODPRJ
+*         name: cif_codprj
 *       - in: path
-*         name: SCP_CODCLI
+*         name: cif_codcli
 *     responses:
 *       200:
 *         description: The  List of Interface
@@ -120,7 +120,7 @@ router.put("/:id", interface.update);
 *                 allOf:
 *                   - $ref: '#/components/schemas/Interface'
 */
-router.get("/getlist/:CIF_CODCLI/:CIF_CODPRJ", interface.getList);
+router.get("/getlist/:cif_codcli/:cif_codprj", interface.getList);
 
 
 module.exports = router;  

@@ -19,7 +19,8 @@ class InterfaceEndPoint {
   }
 
   static getList(req, res) {    
-    InterfaceController.getList(req.params.CIF_CODCLI, req.params.CIF_CODPRJ)
+    console.log(req.params);
+    InterfaceController.getList(req.params.cif_codcli, req.params.cif_codprj)
       .then(data => {
         res.send(data);
       })
