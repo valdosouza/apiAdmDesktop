@@ -67,12 +67,11 @@ class InterfaceController extends Base {
         'SELECT '+
         ' IFC_CODIGO, '+
         ' IFC_CODPRJ,'+
-        ' IFC_SISTEMA,'+
         ' IFC_DESCRICAO, '+
         ' IFC_FR_NAME, '+
         ' IFC_CODMNU, '+
         ' IFC_MENU, '+ 
-        ' CIF_ATIVO '+
+        ' CIF_ATIVO IFC_SISTEMA '+
         'FROM tb_interface '+
         '  INNER JOIN tb_cli_interface '+
         '  ON (tb_cli_interface.CIF_CODIFC = tb_interface.IFC_CODIGO) '+
