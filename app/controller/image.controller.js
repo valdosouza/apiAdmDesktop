@@ -11,8 +11,8 @@ class ImageController extends Base {
         const buffer = Buffer.from(body.content, 'base64');
 
         // Especifique o caminho onde deseja salvar a imagem
-        const caminhoDaImagem = "C:/Domains/gestaosetes.com.br/gestaosetes.com.br/public_html/uploads/gsx-shop/diasespeciais/large/"+ body.file_name; // Altere o caminho e o nome do arquivo conforme necessário
-
+        var caminhoDaImagem = 'public/' + body.path_server + 'large/' + body.file_name;
+        console.log(caminhoDaImagem);
         // Grave o Buffer como uma imagem no arquivo
         fs.writeFile(caminhoDaImagem, buffer, (erro) => {
           if (erro) {
