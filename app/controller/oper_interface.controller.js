@@ -56,8 +56,11 @@ class OperInterfaceController extends Base {
     const promise = new Promise(async (resolve, reject) => {
       try {
         var sqltxt =
-        'SELECT opf_codigo, opf_descricao,  opf_imagem  '+
-        'FROM tb_oper_interface  ';
+        'SELECT '+
+        'OPF_CODIGO, '+
+        'OPF_DESCRICAO, '+
+        'CONVERT(OPF_IMAGEM USING utf8) '+
+        'FROM tb_oper_interface ';
 
         Tb.sequelize
           .query(
