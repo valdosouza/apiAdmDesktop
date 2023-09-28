@@ -11,9 +11,8 @@ class ImageController extends Base {
         const buffer = Buffer.from(body.content, 'base64');
 
         // Especifique o caminho onde deseja salvar a imagem
-        var caminhoDaImagem = 'public/' + body.path_server + 'large/' + body.file_name;
-        console.log(caminhoDaImagem);
-        // Grave o Buffer como uma imagem no arquivo
+        var caminhoDaImagem = 'public/' + body.path_server + 'product/large/' + body.file_name;
+                // Grave o Buffer como uma imagem no arquivo
         fs.writeFile(caminhoDaImagem, buffer, (erro) => {
           if (erro) {
             resolve({result : 'Erro ao gravar a imagem:', erro});
