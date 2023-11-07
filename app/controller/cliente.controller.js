@@ -13,7 +13,7 @@ class ClienteController extends Base {
             resolve(data);
           })
       } catch (error) {
-        reject("ClienteController.create:" + err);
+        reject("ClienteController.create:" + error);
       }
 
     });
@@ -31,7 +31,7 @@ class ClienteController extends Base {
         })
         
       } catch (error) {
-        reject("ClienteController.update:" + err);
+        reject("ClienteController.update:" + error);
       }
     });
     return promise;
@@ -48,7 +48,7 @@ class ClienteController extends Base {
         })
         
       } catch (error) {
-        reject("ClienteController.avisar:" + err);
+        reject("ClienteController.avisar:" + error);
       }
     });
     return promise;
@@ -67,7 +67,7 @@ class ClienteController extends Base {
         })
         
       } catch (error) {
-        reject("ClienteController.desabilitamenus:" + err);
+        reject("ClienteController.desabilitamenus:" + error);
       }
     });
     return promise;

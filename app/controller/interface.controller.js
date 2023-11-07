@@ -21,7 +21,7 @@ class InterfaceController extends Base {
             resolve(data);
           })
       } catch (error) {
-        reject("InterfaceController.create:" + err);
+        reject("InterfaceController.create:" + error);
       }
 
     });

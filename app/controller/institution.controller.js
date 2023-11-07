@@ -12,8 +12,8 @@ class InstitutionController extends Base {
         .then((data) => {
           resolve(data);
         })
-        .catch(err => {
-          reject("order.insert:" + err);
+        .catch(error => {
+          reject("order.insert:" + error);
         });
     });
     return promise;

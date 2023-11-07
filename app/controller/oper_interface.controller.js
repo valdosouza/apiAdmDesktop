@@ -13,7 +13,7 @@ class OperInterfaceController extends Base {
             resolve(data);
           })
       } catch (error) {
-        reject("OperInterfaceController.create:" + err);
+        reject("OperInterfaceController.create:" + error);
       }
 
     });

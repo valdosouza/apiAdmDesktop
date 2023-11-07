@@ -17,7 +17,7 @@ class ScriptExecController extends Base {
             resolve(data);
           })
       } catch (error) {
-        reject("ScriptExecController.create:" + err);
+        reject("ScriptExecController.create:" + error);
       }
 
     });

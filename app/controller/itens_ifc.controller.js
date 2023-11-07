@@ -12,7 +12,7 @@ class ItensIfcController extends Base {
             resolve(data);
           })
       } catch (error) {
-        reject("ItensIfcController.create:" + err);
+        reject("ItensIfcController.create:" + error);
       }
 
     });

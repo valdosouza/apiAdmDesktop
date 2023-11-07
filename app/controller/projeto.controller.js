@@ -12,7 +12,7 @@ class ProjetoController extends Base {
             resolve(data);
           })
       } catch (error) {
-        reject("ProjetoController.create:" + err);
+        reject("ProjetoController.create:" + error);
       }
 
     });
@@ -26,7 +26,7 @@ class ProjetoController extends Base {
           where: { id: data.id },
         })
       } catch (error) {
-        reject("ProjetoController.update:" + err);
+        reject("ProjetoController.update:" + error);
       }
     });
     return promise;

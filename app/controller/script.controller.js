@@ -19,7 +19,7 @@ class ScriptController extends Base {
             resolve(data);
           })
       } catch (error) {
-        reject("ScriptController.create:" + err);
+        reject("ScriptController.create:" + error);
       }
 
     });
@@ -33,7 +33,7 @@ class ScriptController extends Base {
           where: { id: data.id },
         })
       } catch (error) {
-        reject("ScriptController.update:" + err);
+        reject("ScriptController.update:" + error);
       }
     });
     return promise;
