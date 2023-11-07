@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      field: "SCX_CODSCP",
       references: {
         model: 'tb_script',
         key: 'SCP_CODIGO'
