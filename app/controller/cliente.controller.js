@@ -8,9 +8,9 @@ class ClienteController extends Base {
   static async create(body) {
     const promise = new Promise(async (resolve, reject) => {
       try {      
-        Tb.create(data)
-          .then((data) => {
-            resolve(data);
+        Tb.create(body)
+          .then((body) => {
+            resolve(body);
           })
       } catch (error) {
         reject("ClienteController.create:" + error);

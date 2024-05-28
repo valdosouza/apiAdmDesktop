@@ -8,10 +8,10 @@ class ScriptController extends Base {
     const promise = new Promise(async (resolve, reject) => {
       try {
         var data = {
-          scp_codigo : body.SCP_CODIGO,
-          scp_codprj: body.SCP_CODPRJ,
-          scp_codcli: body.SCP_CODCLI,
-          scp_comando: body.SCP_COMANDO
+          scp_codigo : body.scp_codigo,
+          scp_codprj: body.scp_codprj,
+          scp_codcli: body.scp_codcli,
+          scp_comando: body.scp_comando
         }
         
         Tb.create(data)
