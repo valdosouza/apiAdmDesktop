@@ -207,4 +207,29 @@ router.get("/get/:CLI_CODETD", cliente.get);
 */
 router.get("/getProject/:ETD_CNPJ", cliente.getProject);
 
+/**
+* @swagger
+* /cliente/useapps/{cpfcnpj}:
+*   get:
+*     summary: Verifica se o cliente tem acesso ao modulo de Aplicativos
+*     tags: [Cliente]
+*     parameters:
+*       - in: path
+*         name: cpfcnpj
+*         required: true
+*         schema:
+*           type: string
+*     responses:
+*       200:
+*         description: Resultado da verificacao
+*         content:
+*           application/json:
+*             schema:
+*               type: object
+*               properties:
+*                 result:
+*                   type: boolean
+*/
+router.get("/useapps/:cpfcnpj", cliente.useApps);
+
 module.exports = router;  

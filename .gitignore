@@ -71,6 +71,14 @@ public/uploads/
 .aws/
 *.credentials
 *.envrc
+*.secret
+secrets/
+.npmrc
+
+# Config local overrides
+*.local.js
+*.local.json
+*.local.ts
 
 # Terraform state
 .terraform/
@@ -80,3 +88,17 @@ public/uploads/
 __pycache__/
 .grunt/
 .sass-cache/
+
+# Windows
+Thumbs.db:encryptable
+$RECYCLE.BIN/
+
+# Vim / Emacs swap
+*.swp
+*.swo
+*~
+\#*\#
+
+# Uploads / user content (binarios nao devem ser versionados)
+public/uploads/**
+!public/uploads/.gitkeep
