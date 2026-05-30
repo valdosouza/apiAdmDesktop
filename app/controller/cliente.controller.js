@@ -12,6 +12,7 @@ class ClienteController extends Base {
           .then((body) => {
             resolve(body);
           })
+          .catch(error => { reject("ClienteController.create:" + error); })
       } catch (error) {
         reject("ClienteController.create:" + error);
       }

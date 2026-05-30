@@ -11,6 +11,7 @@ class ProjetoController extends Base {
           .then((data) => {
             resolve(data);
           })
+          .catch(error => { reject("ProjetoController.create:" + error); })
       } catch (error) {
         reject("ProjetoController.create:" + error);
       }

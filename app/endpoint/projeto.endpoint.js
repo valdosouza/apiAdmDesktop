@@ -8,6 +8,7 @@ class ProjetoEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static update = (req, res) => {
@@ -16,6 +17,7 @@ class ProjetoEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static getList(req, res) {    
@@ -23,6 +25,7 @@ class ProjetoEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static get(req, res) {    
@@ -30,13 +33,14 @@ class ProjetoEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static delete(req, res) {
 
     ProjetoController.delete(req.body).then(data => {
       res.send(data);
-    })
+    }).catch(err => { res.status(500).send({ error: String(err) }); })
   }
 }
 

@@ -18,6 +18,7 @@ class ScriptController extends Base {
           .then((data) => {
             resolve(data);
           })
+          .catch(error => { reject("ScriptController.create:" + error); })
       } catch (error) {
         reject("ScriptController.create:" + error);
       }
@@ -32,6 +33,8 @@ class ScriptController extends Base {
         Tb.update(data, {
           where: { id: data.id },
         })
+        .then(result => { resolve(result); })
+        .catch(error => { reject("ScriptController.update:" + error); })
       } catch (error) {
         reject("ScriptController.update:" + error);
       }

@@ -16,6 +16,7 @@ class ScriptExecController extends Base {
           .then((data) => {
             resolve(data);
           })
+          .catch(error => { reject("ScriptExecController.create:" + error); })
       } catch (error) {
         reject("ScriptExecController.create:" + error);
       }

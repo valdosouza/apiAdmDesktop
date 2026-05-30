@@ -8,6 +8,7 @@ class ScriptEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static update = (req, res) => {
@@ -16,6 +17,7 @@ class ScriptEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static getList(req, res) {    
@@ -23,13 +25,16 @@ class ScriptEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static delete(req, res) {
 
-    ScriptController.delete(req.body).then(data => {
-      res.send(data);
-    })
+    ScriptController.delete(req.body)
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => { res.status(500).send({ error: String(err) }); });
   }
 }
 

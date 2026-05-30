@@ -1,24 +1,76 @@
 const Base = require('../controller/base.controller.js');
 const db = require("../model");
-const Op = db.Sequelize.Op;
-const TbInstitution = db.institution;
+const Tb = db.institution;
 
 class InstitutionController extends Base {
 
-  static async create(body) {
+  static async insert(body) {
     const promise = new Promise(async (resolve, reject) => {
-      
-      Tb.create(data)
-        .then((data) => {
-          resolve(data);
+      try {
+        Tb.create(body)
+          .then((data) => resolve(data))
+          .catch((error) => reject("InstitutionController.insert:" + error));
+      } catch (error) {
+        reject("InstitutionController.insert:" + error);
+      }
+    });
+    return promise;
+  }
+
+  static async getInstitution(id) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        Tb.findByPk(id)
+          .then((data) => resolve(data))
+          .catch((error) => reject("InstitutionController.getInstitution:" + error));
+      } catch (error) {
+        reject("InstitutionController.getInstitution:" + error);
+      }
+    });
+    return promise;
+  }
+
+  static async getList(filter) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        Tb.findAll()
+          .then((data) => resolve(data))
+          .catch((error) => reject("InstitutionController.getList:" + error));
+      } catch (error) {
+        reject("InstitutionController.getList:" + error);
+      }
+    });
+    return promise;
+  }
+
+  static async update(body) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        Tb.update(body, {
+          where: { id: body.id },
         })
-        .catch(error => {
-          reject("order.insert:" + error);
-        });
+          .then((data) => resolve(data))
+          .catch((error) => reject("InstitutionController.update:" + error));
+      } catch (error) {
+        reject("InstitutionController.update:" + error);
+      }
+    });
+    return promise;
+  }
+
+  static async delete(body) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        Tb.destroy({ where: { id: body.id } })
+          .then((data) => resolve(data))
+          .catch((error) => reject("InstitutionController.delete:" + error));
+      } catch (error) {
+        reject("InstitutionController.delete:" + error);
+      }
     });
     return promise;
   }
 
 }
 
-module.exports = InstitutionController; 
+module.exports = InstitutionController;

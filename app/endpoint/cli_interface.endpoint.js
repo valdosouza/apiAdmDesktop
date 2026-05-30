@@ -8,6 +8,7 @@ class CliInterfaceEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 }
 

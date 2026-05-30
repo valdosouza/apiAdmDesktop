@@ -20,6 +20,7 @@ class InterfaceController extends Base {
           .then((data) => {
             resolve(data);
           })
+          .catch(error => { reject("InterfaceController.create:" + error); })
       } catch (error) {
         reject("InterfaceController.create:" + error);
       }

@@ -12,6 +12,7 @@ class OperInterfaceController extends Base {
           .then((data) => {
             resolve(data);
           })
+          .catch(error => { reject("OperInterfaceController.create:" + error); })
       } catch (error) {
         reject("OperInterfaceController.create:" + error);
       }

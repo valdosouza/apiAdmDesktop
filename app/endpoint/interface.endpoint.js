@@ -8,6 +8,7 @@ class InterfaceEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static update = (req, res) => {
@@ -16,6 +17,7 @@ class InterfaceEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static getList(req, res) {    
@@ -24,6 +26,7 @@ class InterfaceEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static delete(req, res) {
@@ -31,7 +34,7 @@ class InterfaceEndPoint {
     InterfaceController.delete(req.params.ifc_codigo)
     .then(() => {
       res.status(200).end();
-    })
+    }).catch(err => { res.status(500).send({ error: String(err) }); })
   }
 }
 

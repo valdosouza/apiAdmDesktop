@@ -8,6 +8,7 @@ class ClienteEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static update = (req, res) => {
@@ -16,6 +17,7 @@ class ClienteEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static avisar = (req, res) => {
@@ -24,6 +26,7 @@ class ClienteEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
   
   static desabilitarMenus = (req, res) => {
@@ -32,12 +35,14 @@ class ClienteEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }  
   static getList(req, res) {    
     ClienteController.getList()
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static get(req, res) {    
@@ -45,6 +50,7 @@ class ClienteEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static getProject(req, res) {    
@@ -52,13 +58,14 @@ class ClienteEndPoint {
       .then(data => {
         res.send(data);
       })
+      .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
   static delete(req, res) {
 
     ClienteController.delete(req.body).then(data => {
       res.send(data);
-    })
+    }).catch(err => { res.status(500).send({ error: String(err) }); })
   }
 }
 

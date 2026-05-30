@@ -11,6 +11,7 @@ class ItensIfcController extends Base {
           .then((data) => {
             resolve(data);
           })
+          .catch(error => { reject("ItensIfcController.create:" + error); })
       } catch (error) {
         reject("ItensIfcController.create:" + error);
       }
