@@ -29,7 +29,6 @@ const server = {
         app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }))
 
         app.use(cookieParser());
-        app.use(cookieParser());
 
         // Reject empty JSON bodies for POST/PUT to avoid DB errors during smoke tests
         app.use((req, res, next) => {

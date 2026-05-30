@@ -149,6 +149,33 @@ class ClienteController extends Base {
     return promise;
   }
 
+  static async useApps(ETD_CNPJ_CPF) {
+    const promise = new Promise(async (resolve, reject) => {
+      try {
+        const sqltxt =
+          'SELECT CLI_USE_APPS ' +
+          'FROM tb_entidade e ' +
+          '  inner join tb_cliente c ' +
+          '  on (c.CLI_CODETD = e.ETD_CODIGO) ' +
+          'WHERE e.ETD_CNPJ_CPF = ? ' +
+          "and c.CLI_ATIVO = 'S' " +
+          "and c.CLI_USE_APPS = 'S'";
+        Tb.sequelize
+          .query(sqltxt, {
+            replacements: [ETD_CNPJ_CPF],
+            type: Tb.sequelize.QueryTypes.SELECT,
+          })
+          .then((data) => {
+            resolve({ result: data.length > 0 });
+          })
+          .catch((error) => reject('ClienteController.useApps:' + error));
+      } catch (error) {
+        reject('ClienteController.useApps:' + error);
+      }
+    });
+    return promise;
+  }
+
 }
 
-module.exports = ClienteController; 
+module.exports = ClienteController;

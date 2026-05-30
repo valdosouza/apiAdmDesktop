@@ -61,8 +61,13 @@ class ClienteEndPoint {
       .catch(err => { res.status(500).send({ error: String(err) }); })
   }
 
-  static delete(req, res) {
+  static useApps(req, res) {
+    ClienteController.useApps(req.params.cpfcnpj)
+      .then(data => { res.send(data); })
+      .catch(err => { res.status(500).send({ error: String(err) }); });
+  }
 
+  static delete(req, res) {
     ClienteController.delete(req.body).then(data => {
       res.send(data);
     }).catch(err => { res.status(500).send({ error: String(err) }); })
