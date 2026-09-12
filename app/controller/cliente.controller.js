@@ -30,7 +30,7 @@ class ClienteController extends Base {
         .then((data)=>{
           resolve(data);
         })
-        
+        .catch(error => { reject("ClienteController.update:" + error); })
       } catch (error) {
         reject("ClienteController.update:" + error);
       }
